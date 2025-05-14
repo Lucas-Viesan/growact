@@ -9,6 +9,7 @@ export default {
         azul: {
           // Tons da 1ª página
           base: "#0F293C",
+          intenso: "#0C0D46",
           escuro: "#0C1E2B",
           profundo: "#0A3858",
           claro: "#4CE0C3",
@@ -34,6 +35,7 @@ export default {
 
         // Cores adicionais
         preto: "#03070C",
+        branco: "#ffffff",
         lilas: "#B805FF",
         bege: "#574C10",
         vermelho: "#661818",
@@ -46,5 +48,15 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-gradiente-custom": {
+          backgroundImage: "linear-gradient(to right, #4CE0C3 0%, #B805FF 58%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        },
+      });
+    },
+  ],
 };
