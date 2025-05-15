@@ -16,6 +16,7 @@ export default {
           gelo: "#B7F2E6",
           acinzentado: "#7EA4D7",
           denso: "#062032",
+          stroke: "#0C0D46",
 
           // Tons da 2ª página
           destaque: "#2C85FC",
