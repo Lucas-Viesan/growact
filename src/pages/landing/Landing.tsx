@@ -1,5 +1,3 @@
-import React from "react";
-
 function Landing() {
   return (
     <>
@@ -27,10 +25,10 @@ function Landing() {
 
         <div className="w-96 lg:w-full h-auto flex flex-col lg:flex-row justify-center items-center gap-4 p-8">
           <div className="flex flex-col  items-center justify-center w-72 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
-            <span className="font-urbanist font-bold text-4xl lg:text-6xl text-gradiente-custom">
+            <span className="h-17 font-urbanist font-bold text-4xl lg:text-6xl text-gradiente-custom">
               Organize
             </span>
-            <span className="font-urbanist font-bold text-2xl lg:text-4xl text-gradiente-custom">
+            <span className="font-urbanist font-bold text-2xl lg:text-4xl text-gradiente-custom ">
               seus objetivos
             </span>
           </div>
