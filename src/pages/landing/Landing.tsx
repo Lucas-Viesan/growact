@@ -18,8 +18,11 @@ function Landing() {
               </span>
             </button>
           </div>
-          <div className=" h-auto flex justify-center lg:justify-between mt-8 lg:mr-10">
-            <img className="lg:h-[450px]" src="/src/assets/iPhone-13.png" />
+          <div className=" h-auto flex justify-center lg:justify-between mt-8 lg:mr-2">
+            <img
+              className="lg:h-[400px] lg:w-[680px]"
+              src="/src/assets/Macbook-Air.png"
+            />
           </div>
         </div>
 
