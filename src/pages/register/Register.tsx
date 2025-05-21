@@ -176,7 +176,7 @@ function Register() {
             </div>
             <button
               type="submit"
-              className="w-[298px] lg:w-[432px] h-14 bg-azul-oceano rounded-xl mt-8 font-notosans font-bold text-base text-azul-gelo"
+              className="w-[298px] lg:w-[432px] h-14 flex justify-center items-center bg-azul-oceano rounded-xl mt-8 font-notosans font-bold text-base text-azul-gelo"
             >
               {" "}
               {isLoading ? (
