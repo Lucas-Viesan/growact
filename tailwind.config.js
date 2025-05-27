@@ -36,6 +36,8 @@ export default {
 
         // Cores adicionais
         preto: "#03070C",
+        cinza: "#705F5F",
+        acinzentado: "#27272A",
         branco: "#ffffff",
         lilas: "#B805FF",
         bege: "#574C10",

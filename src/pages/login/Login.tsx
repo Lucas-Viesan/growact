@@ -39,7 +39,7 @@ function Login() {
             <img src="/src/assets/logo-container.png" />
           </div>
           <h5 className="font-notosans font-bold text-branco pt-8">
-            Bem vindo{" "}
+            Bem vindo!{" "}
           </h5>
           <p className="font-notosans text-sm text-azul-gelo pt-4">
             Digite seu e-mail abaixo para acessar o Growact e transformar sua
@@ -76,7 +76,7 @@ function Login() {
                 Senha
               </label>
               <input
-                type="text"
+                type="password"
                 id="senha"
                 name="senha"
                 placeholder="senha"
