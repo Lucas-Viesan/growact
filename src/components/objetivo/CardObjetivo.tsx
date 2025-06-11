@@ -22,26 +22,42 @@ export function CardObjetivo({
   const [modalAberto, setModalAberto] = useState(false);
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
   const [carregando, setCarregando] = useState(true);
+  const [progresso, setProgresso] = useState(0);
 
   const { usuario } = useContext(AuthContext);
   const token = usuario.token;
 
-  async function buscarTarefas() {
+  const buscarTarefas = async () => {
     setCarregando(true);
     try {
-      await buscar(`/tarefas/objetivo/${objetivo.id}`, setTarefas, {
-        headers: { Authorization: token },
-      });
-    } catch (error) {
-      console.error("Erro ao buscar tarefas:", error);
+      await buscar(
+        `/tarefas/objetivo/${objetivo.id}`,
+        (dados: Tarefa[]) => {
+          setTarefas(dados);
+
+          // Calcula o progresso com base nas tarefas concluídas
+          const total = dados.length;
+          const concluidas = dados.filter((t) => t.concluido).length;
+          const percentual =
+            total > 0 ? Math.round((concluidas / total) * 100) : 0;
+          setProgresso(percentual);
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+    } catch (erro) {
+      console.error("Erro ao buscar tarefas:", erro);
     } finally {
       setCarregando(false);
     }
-  }
+  };
 
   useEffect(() => {
     buscarTarefas();
-  }, []);
+  }, [objetivo.id]);
 
   function aoFecharModal() {
     setModalAberto(false);
@@ -81,7 +97,7 @@ export function CardObjetivo({
         <h4 className="font-notosans font-bold text-branco text-base lg:text-lg mt-4 lg:mt-2">
           {objetivo.titulo}
         </h4>
-        <BarraProgresso />
+        <BarraProgresso progress={progresso} />
       </div>
 
       <div className="w-[331px] lg:w-[380px] h-[273px] bg-cinza/10 rounded-xl mt-4 pl-2  lg:pl-4 pr-1 pt-4 pb-4 flex flex-col">
@@ -104,7 +120,11 @@ export function CardObjetivo({
         ) : (
           <div className="mt-4 overflow-y-auto flex-1 scrollbar-thin-hide">
             {tarefas.map((tarefa) => (
-              <TarefaItem key={tarefa.id} tarefa={tarefa} />
+              <TarefaItem
+                key={tarefa.id}
+                tarefa={tarefa}
+                onUpdate={buscarTarefas}
+              />
             ))}
           </div>
         )}

@@ -1,4 +1,8 @@
-const BarraProgresso = ({ progress = 30 }) => {
+interface BarraProgressoProps {
+  progress: number;
+}
+
+const BarraProgresso = ({ progress }: BarraProgressoProps) => {
   return (
     <div className="w-full mb-4">
       <div className="flex flex-row justify-end">
@@ -15,4 +19,5 @@ const BarraProgresso = ({ progress = 30 }) => {
     </div>
   );
 };
+
 export default BarraProgresso;
