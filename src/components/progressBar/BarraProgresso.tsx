@@ -1,9 +1,8 @@
 const BarraProgresso = ({ progress = 30 }) => {
-  // Valor padrão 30% se não for fornecido
   return (
     <div className="w-full mb-4">
       <div className="flex flex-row justify-end">
-        <span className="text-sm text-end font-medium text-branco">
+        <span className="text-sm text-end font-bold text-branco">
           {progress}%
         </span>
       </div>

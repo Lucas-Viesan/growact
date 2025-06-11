@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Esconde a scrollbar no mobile */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* arquivo src/index.css ou global.css */
+
+.scrollbar-thin-hide {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-thin-hide::-webkit-scrollbar {
+  width: 6px; /* largura do scrollbar vertical */
+}
+
+.scrollbar-thin-hide::-webkit-scrollbar-track {
+  background: transparent; /* sem cor na trilha */
+}
+
+.scrollbar-thin-hide::-webkit-scrollbar-thumb {
+  background-color: transparent; /* deixa invisível */
+  border-radius: 3px;
+}
+.scrollbar-thin-hide:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    100,
+    100,
+    100,
+    0.5
+  ); /* aparece no hover para dar dica visual */
+}
