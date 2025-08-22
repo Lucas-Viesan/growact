@@ -43,6 +43,7 @@ export default {
         lilas: "#B805FF",
         bege: "#574C10",
         vermelho: "#661818",
+        acinzentado2: "#A0AEC0",
       },
 
       fontFamily: {

@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Home } from "./pages/home/Home";
+import { Profile } from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/perfil" element={<Profile />} />
             </Routes>
           </div>
           <Footer />
