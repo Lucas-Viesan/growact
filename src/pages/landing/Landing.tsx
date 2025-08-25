@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Landing() {
   return (
     <>
@@ -12,11 +14,13 @@ function Landing() {
               Assuma o controle dos seus objetivos e avance com foco e
               disciplina.
             </p>
-            <button className="w-32 h-16 lg:w-44  bg-gradient-to-r from-azul-escuro to-azul-profundo rounded-xl">
-              <span className="font-urbanist font-bold text-gradiente-custom text-base lg:text-xl">
+            <Link to="/register">
+            <button className="w-32 h-16 lg:w-44  bg-gradient-to-r from-azul-escuro to-azul-profundo rounded-xl transform transition-all duration-300 hover:scale-105 hover:brightness-110 hover:from-azul-profundo hover:to-azul-noite">
+              <span className="font-urbanist font-bold text-gradiente-custom text-base lg:text-xl ">
                 Comece agora
               </span>
             </button>
+            </Link>
           </div>
           <div className=" h-auto flex justify-center lg:justify-between mt-8 lg:mr-2">
             <img

@@ -22,7 +22,7 @@ export function Navbar() {
 
       {usuario.token === "" ? (
         <Link to="/login">
-          <button className="bg-branco text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors">
+          <button className="bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors">
             Login
           </button>
         </Link>
@@ -32,19 +32,19 @@ export function Navbar() {
           <div className="hidden md:flex items-baseline gap-6">
             <Link
               to="/home"
-              className="text-branco hover:text-azul-destaque transition-colors"
+              className="font-urbanist font-medium text-base text-branco hover:text-azul-destaque transition-colors"
             >
               Início
             </Link>
             <Link
               to="/perfil"
-              className="text-branco hover:text-azul-destaque transition-colors"
+              className="font-urbanist font-medium text-base text-branco hover:text-azul-destaque transition-colors"
             >
               Perfil
             </Link>
             <button
               onClick={logout}
-              className="bg-branco text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors"
+              className="bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors"
             >
               Sair
             </button>
@@ -61,39 +61,55 @@ export function Navbar() {
           </button>
 
           {/* Modal Mobile */}
-          {menuAberto && (
-            <div className="fixed inset-0 bg-preto z-50 flex flex-col items-center justify-center">
+        {menuAberto && (
+          <div className="fixed inset-0 bg-preto z-50 flex flex-col items-start justify-start p-8">
+            {/* Header */}
+            <div className="absolute top-0 left-0 flex items-center justify-between bg-transparent h-20 w-full border-b border-azul-stroke px-4 lg:px-8">
+              <img src="/src/assets/logo-container.png" alt="Logo" />
               <button
                 onClick={() => setMenuAberto(false)}
-                className="absolute top-6 right-6 text-branco text-4xl"
+                className="absolute top-4 right-6 text-branco text-4xl"
               >
                 &times;
               </button>
+            </div>
 
-              <div className="flex flex-col gap-10 text-2xl">
+            {/* Links */}
+            <div className="flex flex-col w-full text-2xl mt-24">
+              <div className="flex flex-row items-center gap-x-4 py-4 border-b border-azul-stroke">
+                <img src="./src/assets/home.png" alt="Início" className="w-6 h-6" />
                 <Link
                   to="/home"
                   onClick={() => setMenuAberto(false)}
-                  className="text-branco hover:text-azul-claro transition-colors"
+                  className="font-urbanist text-branco hover:text-azul-claro transition-colors"
                 >
                   Início
                 </Link>
+              </div>
+
+              <div className="flex flex-row items-center gap-x-4 py-4 border-b border-azul-stroke">
+                <img src="./src/assets/profile.png" alt="Perfil" className="w-6 h-6" />
                 <Link
                   to="/perfil"
                   onClick={() => setMenuAberto(false)}
-                  className="text-branco hover:text-azul-claro transition-colors"
+                  className="font-urbanist text-branco hover:text-azul-claro transition-colors"
                 >
                   Perfil
                 </Link>
-                <button
-                  onClick={logout}
-                  className="bg-branco text-preto hover:bg-azul-claro hover:text-branco px-10 py-3 rounded-3xl transition-colors"
-                >
-                  Sair
-                </button>
               </div>
+
+              {/* Botão sair */}
+              <button
+                onClick={logout}
+                className="flex flex-row items-center justify-center gap-x-1 py-4 font-urbanist font-semibold text-preto bg-branco hover:bg-azul-claro hover:text-branco rounded-3xl transition-colors mt-6 px-10"
+              >
+                <span>Sair</span>
+                <img src="./src/assets/logout.png" alt="Sair" className="w-6 h-6" />
+              </button>
             </div>
-          )}
+          </div>
+        )}
+
         </>
       )}
     </div>

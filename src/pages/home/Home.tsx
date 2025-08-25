@@ -113,9 +113,9 @@ function fecharModalParabens() {
             </p>
             <button
               onClick={abrirModalCriar}
-              className="w-32 h-16 lg:w-44 bg-gradient-to-r from-azul-escuro to-azul-profundo rounded-xl mt-4"
+              className="w-32 h-16 lg:w-44 bg-gradient-to-r from-azul-escuro to-azul-profundo rounded-xl mt-4 transform transition-all duration-300 hover:scale-105 hover:brightness-110 hover:from-azul-profundo hover:to-azul-noite"
             >
-              <span className="font-urbanist font-bold text-gradiente-custom text-base lg:text-xl">
+              <span className="font-urbanist font-bold text-gradiente-custom text-base lg:text-xl ">
                 Criar Objetivo
               </span>
             </button>
@@ -157,23 +157,23 @@ function fecharModalParabens() {
       {showModalDeletar && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <div className="bg-gradient-to-b from-preto to-azul-denso  p-8 rounded-xl w-[90%] max-w-lg">
-            <h2 className="text-xl text-white mb-4">Excluir Objetivo</h2>
-            <p className="text-white mb-6">
+            <h2 className="font-notosans font-bold text-xl text-white mb-4">Excluir objetivo</h2>
+            <p className="font-notosans text-sm lg:text-base text-white mb-6">
               Tem certeza que deseja excluir o objetivo{" "}
               <strong>{objetivoSelecionado?.titulo}</strong>?
             </p>
-            <div className="flex justify-between gap-4">
-              <button
-                onClick={fecharModalDeletar}
-                className="bg-preto px-4 py-2 rounded-md text-white"
-              >
-                Cancelar
-              </button>
+            <div className="flex flex-col justify-between gap-2">
               <button
                 onClick={confirmarDeletarObjetivo}
-                className="bg-vermelho px-4 py-2 rounded-md text-white"
+                className="bg-vermelho h-10 px-4 py-2 rounded-md font-inter font-semibold text-sm lg:text-base text-white tracking-wide"
               >
                 Excluir
+              </button>
+              <button
+                onClick={fecharModalDeletar}
+                className="bg-preto h-10  px-4 py-2 rounded-md font-inter font-semibold text-sm lg:text-base text-white tracking-wide"
+              >
+                Cancelar
               </button>
             </div>
           </div>

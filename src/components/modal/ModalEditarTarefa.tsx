@@ -52,30 +52,33 @@ export default function ModalEditarTarefa({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-      <div className="bg-white rounded-xl p-6 w-[300px] flex flex-col gap-4">
-        <h2 className="text-xl font-bold text-black">Editar Tarefa</h2>
+      <div className="bg-gradient-to-b from-preto to-azul-denso rounded-xl p-6 w-[300px] flex flex-col gap-4">
+        <h2 className="text-xl font-notosans font-bold text-white">Editar tarefa</h2>
         <input
           type="text"
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
-          className="border rounded-md px-2 py-1"
+          className="p-2 rounded-md bg-cinza/10 font-notosans text-white border-2 border-transparent 
+             focus:border-azul-escuro focus:ring-2 focus:ring-azul-vivo
+             placeholder:text-cinza-claro
+             transition duration-300 outline-none"
         />
-        <div className="flex justify-between mt-4">
+        <div className="flex flex-col justify-between mt-1 gap-2">
           <button
             onClick={handleSalvar}
-            className="bg-green-600 text-white px-3 py-1 rounded"
+            className="bg-azul-oceano h-10 font-inter font-semibold text-sm lg:text-base text-white tracking-wide px-3 py-1 rounded-md"
           >
             Salvar
           </button>
           <button
             onClick={handleDeletar}
-            className="bg-red-600 text-white px-3 py-1 rounded"
+            className="bg-red-600 h-10 font-inter font-semibold text-sm lg:text-base text-white tracking-wide px-3 py-1 rounded-md"
           >
             Deletar
           </button>
           <button
             onClick={fecharModal}
-            className="bg-gray-400 text-white px-3 py-1 rounded"
+            className="bg-preto h-10 font-inter font-semibold text-sm lg:text-base text-white tracking-wide px-3 py-1 rounded-md"
           >
             Cancelar
           </button>

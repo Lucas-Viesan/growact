@@ -59,31 +59,34 @@ function ModalObjetivo({ fecharModal, objetivo, atualizarLista }: ModalProps) {
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
       <div className="bg-gradient-to-b from-preto to-azul-denso p-8 rounded-xl w-[90%] max-w-lg">
         <h2 className="font-notosans font-bold text-xl text-white mb-4">
-          {objetivo ? "Atualizar Objetivo" : "Criar novo Objetivo"}
+          {objetivo ? "Atualize seu objetivo" : "Defina seu objetivo"}
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
-            placeholder="Título"
+            placeholder="Ex: Ler 12 livros até dezembro"
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
-            className="p-2 rounded-md bg-cinza/10 text-white"
+            className="p-2 rounded-md bg-cinza/10 font-notosans text-white border-2 border-transparent 
+             focus:border-azul-escuro focus:ring-2 focus:ring-azul-vivo
+             placeholder:text-cinza-claro
+             transition duration-300 outline-none"
             required
           />
 
-          <div className="flex  justify-between gap-4">
+          <div className="flex flex-col justify-between gap-2">
+            <button
+              type="submit"
+              className="bg-azul-oceano h-10 px-4 py-2 rounded-md font-inter font-semibold text-sm lg:text-base text-white tracking-wide"
+            >
+              {objetivo ? "Atualizar" : "Cadastrar"}
+            </button>
             <button
               type="button"
               onClick={fecharModal}
-              className="bg-vermelho px-4 py-2 rounded-md text-white"
+              className="bg-vermelho h-10  px-4 py-2 rounded-md font-inter font-semibold text-sm lg:text-base text-white tracking-wide"
             >
               Cancelar
-            </button>
-            <button
-              type="submit"
-              className="bg-azul-oceano px-4 py-2 rounded-md text-white"
-            >
-              {objetivo ? "Atualizar" : "Cadastrar"}
             </button>
           </div>
         </form>
