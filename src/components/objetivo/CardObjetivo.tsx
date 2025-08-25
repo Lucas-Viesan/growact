@@ -12,12 +12,14 @@ interface CardObjetivoProps {
   objetivo: Objetivo;
   aoEditar: (objetivo: Objetivo) => void;
   aoDeletar: (objetivo: Objetivo) => void;
+  aoConcluir?: (objetivo: Objetivo) => void;
 }
 
 export function CardObjetivo({
   objetivo,
   aoEditar,
   aoDeletar,
+  aoConcluir,
 }: CardObjetivoProps) {
   const [modalAberto, setModalAberto] = useState(false);
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
@@ -41,6 +43,11 @@ export function CardObjetivo({
           const percentual =
             total > 0 ? Math.round((concluidas / total) * 100) : 0;
           setProgresso(percentual);
+
+          if (percentual === 100) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+          aoConcluir && aoConcluir(objetivo);
+        }
         },
         {
           headers: {
@@ -105,12 +112,14 @@ export function CardObjetivo({
           <h3 className="font-notosans font-normal text-base lg:text-xl text-branco">
             Tarefas para atingir o objetivo
           </h3>
+          {objetivo.percentual < 100 && (
           <button
             onClick={() => setModalAberto(true)}
             className="w-11 h-11 bg-gradient-to-b from-azul-noite to-azul-forte rounded-[22px] font-bold text-branco text-base mr-2"
           >
             +
           </button>
+          )}
         </div>
 
         {carregando ? (

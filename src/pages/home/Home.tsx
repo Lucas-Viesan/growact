@@ -6,6 +6,7 @@ import ModalObjetivo from "../../components/modal/ModalObjetivo";
 import type Objetivo from "../../models/Objetivo";
 import { AuthContext } from "../../contexts/AuthContext";
 import { TailSpin } from "react-loader-spinner";
+import { ModalParabens } from "../../components/modal/ModalParabens";
 
 export function Home() {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ export function Home() {
     useState<Objetivo | null>(null);
   const [objetivos, setObjetivos] = useState<Objetivo[]>([]);
   const [carregando, setCarregando] = useState(true);
+  const [objetivoConcluido, setObjetivoConcluido] = useState<Objetivo | null>(null);
+
 
   const buscarObjetivos = async () => {
     try {
@@ -76,6 +79,17 @@ export function Home() {
     setShowModalDeletar(false);
   }
 
+  function handleObjetivoConcluido(obj: Objetivo) {
+  setObjetivoConcluido(obj);
+}
+
+function fecharModalParabens() {
+  setObjetivoConcluido(null);
+  buscarObjetivos(); // atualiza a lista e remove o card concluído
+}
+
+
+
   useEffect(() => {
     if (token === "") {
       alert("Você precisa estar logado!");
@@ -123,6 +137,7 @@ export function Home() {
           objetivos={objetivos.filter(obj => obj.percentual < 100)}
           aoEditar={abrirModalEditar}
           aoDeletar={abrirModalDeletar}
+          aoConcluir={handleObjetivoConcluido}
         />
       )}
 
@@ -133,6 +148,11 @@ export function Home() {
           atualizarLista={buscarObjetivos}
         />
       )}
+
+      {objetivoConcluido && (
+      <ModalParabens objetivo={objetivoConcluido} fecharModal={fecharModalParabens} />
+      )}
+
 
       {showModalDeletar && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">

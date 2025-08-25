@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { buscar } from "../../services/Service";
-import { CardObjetivo } from "../../components/objetivo/CardObjetivo";
 import { AuthContext } from "../../contexts/AuthContext";
 import type Usuario from "../../models/Usuario";
+import ListarObjetivo from "../../components/objetivo/ListarObjetivo";
 
 type Objetivo = {
   id: number;
@@ -98,17 +98,21 @@ useEffect(() => {
         </div>
       </div>
 
-      <h2 className="font-inter font-bold text-4xl text-branco lg:px-8">Objetivos concluídos</h2>
-      {resumo?.objetivosConcluidos && resumo.objetivosConcluidos.length > 0 &&
-        resumo.objetivosConcluidos.map((obj) => (
-          <CardObjetivo
-            key={obj.id}
-            objetivo={obj}
-            aoEditar={(o) => console.log("Editar", o)}
-            aoDeletar={(o) => console.log("Deletar", o)}
-          />
-        ))
-      }
+      <h2 className="font-inter font-bold text-4xl text-branco lg:px-8">
+        Objetivos concluídos
+      </h2>
+
+        {resumo?.objetivosConcluidos && resumo.objetivosConcluidos.length > 0 && (
+        <div className="mt-4">
+            <ListarObjetivo
+            objetivos={resumo.objetivosConcluidos}
+            aoEditar={() => {}}
+            aoDeletar={() => {}}
+             aoConcluir={() => {}}
+            />
+        </div>
+        )}
+
     </div>
   );
 }

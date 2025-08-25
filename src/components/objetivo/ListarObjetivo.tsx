@@ -5,12 +5,14 @@ interface ListarObjetivoProps {
   objetivos: Objetivo[];
   aoEditar: (objetivo: Objetivo) => void;
   aoDeletar: (objetivo: Objetivo) => void;
+  aoConcluir: (objetivo: Objetivo) => void;
 }
 
 function ListarObjetivo({
   objetivos,
   aoEditar,
   aoDeletar,
+  aoConcluir,
 }: ListarObjetivoProps) {
   return (
     <>
@@ -26,6 +28,7 @@ function ListarObjetivo({
               objetivo={objetivo}
               aoEditar={aoEditar}
               aoDeletar={aoDeletar}
+              aoConcluir={aoConcluir}
             />
           ))}
         </div>
