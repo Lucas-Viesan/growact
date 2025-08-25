@@ -34,6 +34,8 @@ export function Home() {
       }
     } finally {
       setCarregando(false);
+      console.log("Token salvo:", `"${usuario.token}"`);
+
     }
   };
 
@@ -118,7 +120,7 @@ export function Home() {
         />
       ) : (
         <ListarObjetivo
-          objetivos={objetivos}
+          objetivos={objetivos.filter(obj => obj.percentual < 100)}
           aoEditar={abrirModalEditar}
           aoDeletar={abrirModalDeletar}
         />

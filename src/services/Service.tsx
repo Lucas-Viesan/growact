@@ -12,7 +12,7 @@ export async function cadastrarUsuario(
   try {
     const resposta = await api.post(url, {
       ...dados,
-      id: undefined, // Garante que o id não será enviado
+      id: undefined, 
     });
     return resposta.data;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -24,8 +24,19 @@ export async function cadastrarUsuario(
 // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export const login = async (url: string, dados: object, setDados: Function) => {
   const resposta = await api.post(url, dados);
-  setDados(resposta.data);
+
+  let tokenLimpo = resposta.data.token;
+
+  if (typeof tokenLimpo === "string") {
+    // Remove todas as aspas, incluindo casos de duplas
+    tokenLimpo = tokenLimpo.replace(/^"+|"+$/g, '');
+  }
+
+  setDados({ ...resposta.data, token: tokenLimpo });
 };
+
+
+
 
 export const buscar = async (
   url: string,
@@ -36,6 +47,22 @@ export const buscar = async (
   const resposta = await api.get(url, header);
   setDados(resposta.data);
 };
+
+export const buscarResumoPerfil = async (
+  usuarioId: number,
+  token: string,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  setResumo: Function
+) => {
+  const header = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  await buscar(`/usuarios/resumo-perfil/${usuarioId}`, setResumo, header);
+};
+
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function cadastrar(url: string, dados: any, header: any) {
