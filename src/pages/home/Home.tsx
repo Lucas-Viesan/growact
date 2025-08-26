@@ -37,7 +37,6 @@ export function Home() {
       }
     } finally {
       setCarregando(false);
-      console.log("Token salvo:", `"${usuario.token}"`);
 
     }
   };

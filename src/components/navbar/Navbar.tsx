@@ -24,7 +24,7 @@ export function Navbar() {
         <Link to="/login">
           <button className="bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors">
             Login
-          </button>
+          </button>1
         </Link>
       ) : (
         <>
@@ -44,9 +44,10 @@ export function Navbar() {
             </Link>
             <button
               onClick={logout}
-              className="bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors"
+              className="flex flex-row items-center justify-center gap-x-1 bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors"
             >
               Sair
+              <img src="./src/assets/logout.png" alt="Sair" className="w-4 h-4" />
             </button>
           </div>
 

@@ -13,6 +13,7 @@ type Objetivo = {
 };
 
 type ResumoPerfil = {
+  foto: string;
   nome: string;
   email: string;  
   totalObjetivosConcluidos: number;
@@ -36,7 +37,6 @@ useEffect(() => {
       } catch (error) {
         console.error("Erro ao buscar resumo:", error);
       }
-      console.log("Token salvo:", `"${usuario.token}"`);
     }
   };
 
@@ -49,7 +49,13 @@ useEffect(() => {
     <div className="flex flex-col justify-start min-h-screen h-auto bg-gradient-to-b from-preto to-azul-escuro2 pt-28">
       <div className="flex flex-col lg:flex-row justify-between lg:items-start  p-8 lg:px-8">
         <div className="flex flex-row">
-          <div className="w-[70px] lg:w-[108px] h-[70px] lg:h-[108px] rounded-[35px] lg:rounded-[54px] bg-branco"></div>
+          <div className="w-[70px] lg:w-[108px] h-[70px] lg:h-[108px] rounded-[35px] lg:rounded-[54px] bg-branco overflow-hidden">
+					<img
+					src={usuario.foto}
+					alt={`Foto de perfil de ${usuario.nome}`}
+          className="w-full h-full object-cover"
+				/>
+          </div>
           <div className="flex flex-col p-4">
             <h3 className="font-inter font-bold text-sm lg:text-3xl text-branco pb-2">
               Olá, seja bem vindo!
@@ -98,12 +104,12 @@ useEffect(() => {
         </div>
       </div>
 
-      <h2 className="font-inter font-bold text-4xl text-branco lg:px-8">
+      <h2 className="font-inter font-bold text-2xl lg:text-4xl text-branco mt-8 px-4  lg:px-8">
         Objetivos concluídos
       </h2>
 
         {resumo?.objetivosConcluidos && resumo.objetivosConcluidos.length > 0 && (
-        <div className="mt-4">
+        <div className="mt-2">
             <ListarObjetivo
             objetivos={resumo.objetivosConcluidos}
             aoEditar={() => {}}
