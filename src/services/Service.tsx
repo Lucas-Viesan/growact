@@ -3,7 +3,7 @@ import type Usuario from "../models/Usuario";
 import { ToastAlerta } from "../utils/ToastAlerta";
 
 const api = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: "https://growact.onrender.com",
 });
 
 export async function cadastrarUsuario(
