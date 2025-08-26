@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Register() {
   const navigate = useNavigate();
@@ -45,14 +46,14 @@ function Register() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario);
-        alert("Usuário cadastrado com sucesso!");
+        ToastAlerta("Usuário cadastrado com sucesso!", "sucesso");
         navigate("/login");
       } catch {
-        alert("Erro ao cadastrar o usuário!");
+        ToastAlerta("Erro ao cadastrar o usuário!", "erro");
       }
     } else {
-      alert(
-        "Dados do usuário inconsistentes! Verifique as informações do cadastro."
+      ToastAlerta(
+        "Dados do usuário inconsistentes! Verifique as informações do cadastro.", "erro"
       );
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");

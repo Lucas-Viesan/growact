@@ -1,5 +1,6 @@
 import axios from "axios";
 import type Usuario from "../models/Usuario";
+import { ToastAlerta } from "../utils/ToastAlerta";
 
 const api = axios.create({
   baseURL: "http://localhost:8081",
@@ -14,7 +15,7 @@ export async function cadastrarUsuario(
       ...dados,
       id: undefined, 
     });
-    return resposta.data;
+   ToastAlerta(resposta.data.mensagem, 'sucesso');
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     // ...
@@ -46,7 +47,8 @@ export const buscar = async (
 ) => {
   const resposta = await api.get(url, header);
   setDados(resposta.data);
-};
+  ToastAlerta(resposta.data.mensagem, 'sucesso');}
+
 
 export const buscarResumoPerfil = async (
   usuarioId: number,
@@ -77,7 +79,7 @@ export const atualizar = async (
   header: object
 ) => {
   const resposta = await api.put(url, dados, header);
-  return resposta.data;
+  ToastAlerta(resposta.data.mensagem, 'sucesso');
 };
 
 export const deletar = async (url: string, header: object) => {

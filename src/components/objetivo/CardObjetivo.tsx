@@ -65,11 +65,13 @@ export function CardObjetivo({
   useEffect(() => {
     buscarTarefas();
   }, [objetivo.id]);
+  
 
   function aoFecharModal() {
     setModalAberto(false);
     buscarTarefas(); // Atualiza tarefas após adicionar
   }
+  
 
   return (
     <div className="flex flex-col items-center w-[350px] lg:w-[410px] h-[465px] lg:h-[447px] bg-preto rounded-xl p-4 box-border">
@@ -139,7 +141,7 @@ export function CardObjetivo({
         )}
       </div>
 
-      {modalAberto && (
+      {modalAberto && objetivo.percentual < 100 &&(
         <ModalTarefa objetivoId={objetivo.id} fecharModal={aoFecharModal} />
       )}
     </div>

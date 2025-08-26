@@ -25,13 +25,14 @@ function Landing() {
           <div className=" h-auto flex justify-center lg:justify-between mt-8 lg:mr-2">
             <img
               className="lg:h-[400px] lg:w-[680px]"
-              src="/src/assets/Macbook-Air.png"
+              src="/src/assets/Macbook-Air-.png"
             />
+
           </div>
         </div>
 
         <div className="w-96 lg:w-full h-auto flex flex-col lg:flex-row justify-center items-center gap-4 p-8">
-          <div className="flex flex-col  items-center justify-center w-72 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
+          <div className="flex flex-col  items-center justify-center w-80 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
             <span className="h-17 font-urbanist font-bold text-4xl lg:text-6xl text-gradiente-custom">
               Organize
             </span>
@@ -39,7 +40,7 @@ function Landing() {
               seus objetivos
             </span>
           </div>
-          <div className="flex flex-col items-center justify-center w-72 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
+          <div className="flex flex-col items-center justify-center w-80 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
             <span className="font-urbanist font-bold text-4xl lg:text-6xl text-gradiente-custom">
               Execute
             </span>
@@ -47,7 +48,7 @@ function Landing() {
               suas tarefas
             </span>
           </div>
-          <div className="flex flex-col items-center justify-center w-72 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
+          <div className="flex flex-col items-center justify-center w-80 lg:w-[412px] h-36 lg:h-60 bg-gradient-to-b from-azul-escuro to-azul-profundo rounded-xl p-4">
             <span className="font-urbanist font-bold text-4xl lg:text-6xl text-gradiente-custom">
               Evolua
             </span>

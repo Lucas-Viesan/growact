@@ -7,6 +7,7 @@ import type Objetivo from "../../models/Objetivo";
 import { AuthContext } from "../../contexts/AuthContext";
 import { TailSpin } from "react-loader-spinner";
 import { ModalParabens } from "../../components/modal/ModalParabens";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 export function Home() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export function Home() {
       if (error.toString().includes("403")) {
         handleLogout();
       } else {
-        alert("Erro ao buscar objetivos.");
+        ToastAlerta("Erro ao buscar objetivos.", "erro");
       }
     } finally {
       setCarregando(false);
@@ -49,7 +50,7 @@ export function Home() {
       buscarObjetivos();
       fecharModalDeletar();
     } catch {
-      alert("Erro ao deletar objetivo.");
+      ToastAlerta("Erro ao deletar objetivo.", "sucesso");
     }
   }
 
@@ -91,7 +92,7 @@ function fecharModalParabens() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado!", "info");
       navigate("/");
     } else {
       buscarObjetivos();

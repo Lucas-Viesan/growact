@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ export function Navbar() {
 
   function logout() {
     handleLogout();
-    alert("Usuário desconectado com sucesso!");
+    ToastAlerta('O Usuário foi desconectado com sucesso!', 'info')
     navigate("/");
     setMenuAberto(false);
   }
@@ -22,9 +23,10 @@ export function Navbar() {
 
       {usuario.token === "" ? (
         <Link to="/login">
-          <button className="bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors">
-            Login
-          </button>1
+          <button className="flex flex-row items-center justify-center gap-x-1 bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-18 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors px-2">
+            <span>Login</span>
+            <img src="./src/assets/login.png" alt="Sair" className="w-4 h-4" />
+          </button>
         </Link>
       ) : (
         <>
