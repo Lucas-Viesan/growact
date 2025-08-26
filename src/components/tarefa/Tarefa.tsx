@@ -37,8 +37,8 @@ export function Tarefa({ tarefa, onUpdate }: TarefaProps) {
           className="w-6 h-6 cursor-pointer"
           src={
             tarefa.concluido
-              ? "/src/assets/checked.png"
-              : "/src/assets/unchecked.png"
+              ? "/assets/checked.png"
+              : "/assets/unchecked.png"
           }
           onClick={handleCheck}
         />
@@ -48,7 +48,7 @@ export function Tarefa({ tarefa, onUpdate }: TarefaProps) {
           </p>
           <img
             className="w-6 h-6 cursor-pointer"
-            src="/src/assets/arrow.png"
+            src="/assets/arrow.png"
             onClick={() => setModalAberto(true)}
           />
         </div>

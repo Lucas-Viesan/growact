@@ -18,14 +18,14 @@ export function Navbar() {
   return (
     <div className="absolute top-0 left-0 flex items-center justify-between bg-transparent h-20 w-full border-b border-azul-stroke px-4 lg:px-8">
       <Link to="/">
-        <img src="/src/assets/logo-container.png" alt="Logo" />
+        <img src="/assets/logo-container.png" alt="Logo" />
       </Link>
 
       {usuario.token === "" ? (
         <Link to="/login">
           <button className="flex flex-row items-center justify-center gap-x-1 bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-18 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors px-2">
             <span>Login</span>
-            <img src="./src/assets/login.png" alt="Sair" className="w-4 h-4" />
+            <img src="/assets/login.png" alt="Sair" className="w-4 h-4" />
           </button>
         </Link>
       ) : (
@@ -49,7 +49,7 @@ export function Navbar() {
               className="flex flex-row items-center justify-center gap-x-1 bg-branco font-urbanist font-semibold text-sm tracking-wide text-preto hover:bg-azul-destaque hover:text-branco w-16 h-8 lg:w-20 lg:h-10 rounded-3xl transition-colors"
             >
               Sair
-              <img src="./src/assets/logout.png" alt="Sair" className="w-4 h-4" />
+              <img src="/assets/logout.png" alt="Sair" className="w-4 h-4" />
             </button>
           </div>
 
@@ -68,7 +68,7 @@ export function Navbar() {
           <div className="fixed inset-0 bg-preto z-50 flex flex-col items-start justify-start p-8">
             {/* Header */}
             <div className="absolute top-0 left-0 flex items-center justify-between bg-transparent h-20 w-full border-b border-azul-stroke px-4 lg:px-8">
-              <img src="/src/assets/logo-container.png" alt="Logo" />
+              <img src="/assets/logo-container.png" alt="Logo" />
               <button
                 onClick={() => setMenuAberto(false)}
                 className="absolute top-4 right-6 text-branco text-4xl"
@@ -80,7 +80,7 @@ export function Navbar() {
             {/* Links */}
             <div className="flex flex-col w-full text-2xl mt-24">
               <div className="flex flex-row items-center gap-x-4 py-4 border-b border-azul-stroke">
-                <img src="./src/assets/home.png" alt="Início" className="w-6 h-6" />
+                <img src="/assets/home.png" alt="Início" className="w-6 h-6" />
                 <Link
                   to="/home"
                   onClick={() => setMenuAberto(false)}
@@ -91,7 +91,7 @@ export function Navbar() {
               </div>
 
               <div className="flex flex-row items-center gap-x-4 py-4 border-b border-azul-stroke">
-                <img src="./src/assets/profile.png" alt="Perfil" className="w-6 h-6" />
+                <img src="/assets/profile.png" alt="Perfil" className="w-6 h-6" />
                 <Link
                   to="/perfil"
                   onClick={() => setMenuAberto(false)}
@@ -107,7 +107,7 @@ export function Navbar() {
                 className="flex flex-row items-center justify-center gap-x-1 py-4 font-urbanist font-semibold text-preto bg-branco hover:bg-azul-claro hover:text-branco rounded-3xl transition-colors mt-6 px-10"
               >
                 <span>Sair</span>
-                <img src="./src/assets/logout.png" alt="Sair" className="w-6 h-6" />
+                <img src="/assets/logout.png" alt="Sair" className="w-6 h-6" />
               </button>
             </div>
           </div>

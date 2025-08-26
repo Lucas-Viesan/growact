@@ -87,7 +87,7 @@ export function CardObjetivo({
             >
               <img
                 className="w-5 h-5"
-                src="./src/assets/editar.png"
+                src="/assets/editar.png"
                 alt="Editar"
               />
             </button>
@@ -97,7 +97,7 @@ export function CardObjetivo({
             >
               <img
                 className="w-5 h-5"
-                src="./src/assets/delete.png"
+                src="/assets/delete.png"
                 alt="Deletar"
               />
             </button>

@@ -14,7 +14,7 @@ export function ModalParabens({ objetivo, fecharModal }: ModalParabensProps) {
       Você concluiu o objetivo: <strong>{objetivo.titulo}</strong>
     </p>
     <img 
-      src="./src/assets/trofeu.png" 
+      src="/assets/trofeu.png" 
       className="w-[150px] h-[150px] mb-6"
     />
     <button
