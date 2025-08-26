@@ -30,7 +30,11 @@ export default function ListarTarefa({ objetivoId }: Props) {
   return (
     <>
       {tarefas.map((tarefa: TarefaType) => (
-        <Tarefa key={tarefa.id} tarefa={tarefa} />
+        <Tarefa
+          key={tarefa.id}
+          tarefa={tarefa}
+          onUpdate={buscarTarefas}
+        />
       ))}
     </>
   );

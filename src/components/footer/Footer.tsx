@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <div className="flex items-center justify-between bg-gradient-to-r from-preto to-azul-denso h-40 w-full lg:bg-gradient-to-r from-preto to-azul-denso lg:h-24 w-full px-4 lg:px-8">
