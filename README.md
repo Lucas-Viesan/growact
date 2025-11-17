@@ -1,10 +1,11 @@
 
-# Growact (Frontend)
+# Growact
 
 Growact é a interface web para um sistema gamificado de gerenciamento de objetivos e tarefas, onde cada ação concluída gera progresso, recompensas e engajamento.
 
 
-![Capa](./assets/Capa.png)
+![Capa](https://raw.githubusercontent.com/Lucas-Viesan/growact/main/public/assets/Capa.png)
+
 
 ---
 
