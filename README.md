@@ -59,8 +59,9 @@ O **Growact** foi criado a partir da necessidade de tornar a gestão de metas e 
 - Página de perfil / configurações: informações da quantidade de objetivos e tarefas concluidos e pendentes do usuário e o histórico dos objetivos concluidos
 
 
-![Capa](./assets/Contra-Capa-1.png)
-![Capa](./assets/Contra-Capa-2.png)
+![Contra Capa 1](https://raw.githubusercontent.com/Lucas-Viesan/growact/main/public/assets/Contra-Capa-1.png)
+
+![Contra Capa 2](https://raw.githubusercontent.com/Lucas-Viesan/growact/main/public/assets/Contra-Capa-2.png)
 
 ---
 
