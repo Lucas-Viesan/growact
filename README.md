@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Growact (Frontend)
 
-Currently, two official plugins are available:
+Growact é a interface web para um sistema gamificado de gerenciamento de objetivos e tarefas, onde cada ação concluída gera progresso, recompensas e engajamento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+![Capa](./assets/Capa.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Índice
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Visão Geral  
+2. Tecnologias  
+3. Funcionalidades  
+4. Como Usar  
+5. Instalação  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 1. Visão Geral
+
+O **Growact** foi criado a partir da necessidade de tornar a gestão de metas e tarefas mais motivadora e visual. A ideia é transformar a experiência de planejar e cumprir objetivos em algo envolvente, com progresso visual, recompensas virtuais e um design intuitivo.
+
+---
+
+## 2. Tecnologias
+
+- React (Frontend)  
+- TypeScript  
+- Vite (build e dev)  
+- Tailwind CSS (estilização)  
+- React Router DOM (navegação)  
+- Axios (para chamadas HTTP)  
+- React Query (ou outra para fetch/cache) *(se for o caso)*  
+- Context API (ou Redux, dependendo) para estado de autenticação / usuário    
+
+---
+
+## 3. Funcionalidades
+
+- Cadastro e autenticação de usuários  
+- Tela de dashboard com visão geral dos objetivos  
+- Criação, edição e deleção de objetivos  
+- Criação, edição e deleção de tarefas associadas a objetivos  
+- Cálculo automático de progresso por objetivo  
+- Design responsivo para desktop e mobile  
+- Sistema de recompensas conforme o progresso  
+ 
+
+---
+
+## 4. Como Usar
+
+- Página inicial / Dashboard: visualização dos objetivos e progresso.  
+- Página “Novo Objetivo”: formulário para criar um objetivo.  
+- Página “Tarefas”: dentro de cada objetivo, gerenciar tarefas (criar, marcar como concluída, editar).  
+- Página de perfil / configurações: informações da quantidade de objetivos e tarefas concluidos e pendentes do usuário e o histórico dos objetivos concluidos
+
+
+![Capa](./assets/Contra-Capa-1.png)
+![Capa](./assets/Contra-Capa-2.png)
+
+---
+
+## 5. Instalação
+
+### Pré-requisitos
+
+- Node.js (versão recomendada: >= 18)  
+- npm ou yarn  
+
+### Passos
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/growact-frontend.git
+
+# Acesse a pasta
+cd growact-frontend
+
+# Instale as dependências
+npm install
+# ou
+yarn install
+
+# Rodar em modo de desenvolvimento
+npm run dev
+# ou
+yarn dev
